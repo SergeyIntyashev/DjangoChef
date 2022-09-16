@@ -15,3 +15,8 @@ class Category(MPTTModel):
 
     class MPTTMeta:
         order_insertion_by = ['name']
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100)
