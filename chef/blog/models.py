@@ -56,3 +56,15 @@ class Recipe(models.Model):
         null=True,
         blank=True
     )
+
+
+class Comment(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.CharField(max_length=100)
+    website = models.CharField(max_length=150)
+    message = models.TextField(max_length=500)
+    post = models.ForeignKey(
+        Post,
+        related_name='comment',
+        on_delete=models.CASCADE
+    )
