@@ -71,7 +71,7 @@ class Recipe(models.Model):
     directions = models.TextField()
     post = models.ForeignKey(
         Post,
-        related_name='recipe',
+        related_name='recipes',
         on_delete=models.SET_NULL,
         null=True,
         blank=True
