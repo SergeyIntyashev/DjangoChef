@@ -13,5 +13,11 @@ class PostListView(generic.ListView):
             filter(category__slug=self.kwargs.get('slug'))
 
 
+class PostDetailView(generic.DetailView):
+    model = Post
+    slug_url_kwarg = 'post_slug'
+    context_object_name = "post"
+
+
 def home(request):
     return render(request, 'base.html')
